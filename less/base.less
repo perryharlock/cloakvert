@@ -3,8 +3,10 @@ body {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    font-family: @font-abel;
     color: @color-font;
     background: @bg-color-1;
+    font-size: 18px;
 }
 
 p {
@@ -37,4 +39,24 @@ a:hover, a:active, a:focus {
 .btn {
     background-color: @color-primary;
     color: @color-white;
+    border: @color-white;
+    width: 100%;
+    padding: 20px 0;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.amount {
+    background-color: @bg-color-2;
+    border: none;
+    padding: 20px;
+    text-align: center;
+
+    &:focus, &:active {
+        outline: none;
+    }
+}
+
+.rates {
+    margin-top: 80px;
 }
