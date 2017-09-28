@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloakvert</title>
+    <meta name="description" content="Cloak converter">
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <meta name="application-name" content="Cloakvert"/>
+    <meta name="msapplication-TileColor" content="#122E4A" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+
+    <link rel="stylesheet" type="text/css"  href="css/main.css">
+</head>
+<body class="no-js">
+    <header class="header clearfix">
+        
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-6 center">
+                        <input id="amount" type="number" name="amount" value="600">
+                        <div>£<span id="valuePounds"></span>UKP</div>
+                        <div>$<span id="valueDollar"></span>USD</div>
+                        <div>฿<span id="valueBit"></span>BTC</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>1 CLOAK COIN</div>
+                    <div>$<span id="priceDollar" class="price-dollar"></span>USD</div>
+                    <div>฿<span id="priceBit" class="price-bit"></span>BTC</div>
+                </div>
+            </div>
+
+        </section>
+    
+        <footer class="footer center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-6">
+                        <button id="refresh" type="button" class="btn">REFRESH</button>
+                        <div>Last updated : <span id="lastUpdate"></span></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" defer></script>
+    <script src="js-min/script.js" defer></script>
+</body>
+</html>
