@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // Variables and Cached Selectors
     var cloakURL        = 'https://api.coinmarketcap.com/v1/ticker/cloakcoin/',
-        xchangeURL      = 'http://api.fixer.io/latest?base=USD',
+        xchangeURL      = 'https://api.fixer.io/latest?base=USD',
         $body           = $('body'),
         storedPriceUSD  = 0;
         storedPriceBTC  = 0;
