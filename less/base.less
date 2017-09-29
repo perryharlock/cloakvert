@@ -6,7 +6,7 @@ body {
     font-family: @font-abel;
     color: @color-font;
     background: @bg-color-1;
-    font-size: 18px;
+    font-size: 26px;
 }
 
 p {
@@ -39,11 +39,13 @@ a:hover, a:active, a:focus {
 .btn {
     background-color: @color-primary;
     color: @color-white;
+    font-family: @font-robot;
     border: @color-white;
     width: 100%;
-    padding: 20px 0;
-    font-size: 20px;
-    line-height: 20px;
+    padding: 5px 0;
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: 4px;
 }
 
 .amount {
@@ -59,4 +61,16 @@ a:hover, a:active, a:focus {
 
 .rates {
     margin-top: 80px;
+
+    &-num {
+        font-size: 80px;
+        line-height: 80px;
+    }
+
+    &-cloak {
+        display: inline-block;
+        font-family: @font-robot;
+        text-align: left;
+        letter-spacing: 6px;
+    }
 }
