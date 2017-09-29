@@ -62,6 +62,10 @@ $(document).ready(function() {
         populate();
     });
 
+    $(window).scroll(function() {
+        getAjax();
+    });
+
     $refresh.on('click', function() {
         getAjax();
     });
