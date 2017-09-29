@@ -20,11 +20,11 @@ $(document).ready(function() {
     $body.removeClass("no-js");
 
     function populate() {
-        $valueDollar.text(parseFloat(storedPriceUSD * $amount.val()).toFixed(2));
+        $valueDollar.text(parseFloat(storedPriceUSD * $amount.val()).toFixed(0));
         $valueBit.text(parseFloat(storedPriceBTC * $amount.val()).toFixed(8));
         $priceDollar.text(parseFloat(storedPriceUSD).toFixed(2));
         $priceBit.text(storedPriceBTC);
-        $valuePounds.text(parseFloat(storedRateGBP * $valueDollar.text()).toFixed(2));
+        $valuePounds.text(parseFloat(storedRateGBP * $valueDollar.text()).toFixed(0));
         $yourStake.text($amount.val());
     }
 
