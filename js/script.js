@@ -14,6 +14,7 @@ $(document).ready(function() {
         $valuePounds    = $("#valuePounds"),
         $amount         = $("#amount"),
         $refresh        = $("#refresh"),
+        $yourStake      = $("#yourStake"),
         $lastUpdate     = $("#lastUpdate");
 
     $body.removeClass("no-js");
@@ -25,6 +26,7 @@ $(document).ready(function() {
         $priceBit.text(storedPriceBTC);
         $valuePounds.text(parseFloat(storedRateGBP * $valueDollar.text()).toFixed(2));
         $lastUpdate.text(moment().format('ddd DD MMM YY, hh:mm'));
+        $yourStake.text($amount.val());
     }
 
     function getAjax() {
