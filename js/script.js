@@ -62,7 +62,7 @@ $(document).ready(function() {
         populate();
     });
 
-    $body.on('touchmove') function() {
+    $body.on('touchmove', function() {
         getAjax();
     });
 
