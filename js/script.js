@@ -25,7 +25,7 @@ $(document).ready(function() {
         $priceDollar.text(parseFloat(storedPriceUSD).toFixed(2));
         $priceBit.text(storedPriceBTC);
         $valuePounds.text(parseFloat(storedRateGBP * $valueDollar.text()).toFixed(2));
-        $lastUpdate.text(moment().format('ddd DD MMM YY, hh:mm'));
+        $lastUpdate.text(moment().format('ddd DD MMM, hh:mm'));
         $yourStake.text($amount.val());
     }
 
