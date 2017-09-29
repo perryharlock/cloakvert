@@ -55,7 +55,7 @@ $(document).ready(function() {
         }).error(function(jqXHR, error){
             console.log(error);
         });
-        $lastUpdate.text(moment().format('ddd DD MMM, hh:mm'));
+        $lastUpdate.text(moment().format('ddd DD MMM, HH:mm'));
     }
 
     $amount.on('change, keyup', function() {
