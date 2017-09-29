@@ -25,11 +25,11 @@ $(document).ready(function() {
         $priceDollar.text(parseFloat(storedPriceUSD).toFixed(2));
         $priceBit.text(storedPriceBTC);
         $valuePounds.text(parseFloat(storedRateGBP * $valueDollar.text()).toFixed(2));
-        $lastUpdate.text(moment().format('ddd DD MMM, hh:mm'));
         $yourStake.text($amount.val());
     }
 
     function getAjax() {
+        $refresh.removeClass("btn-clicked");
         $.ajax({
             url: cloakURL,
         }).done(function(data) {
@@ -46,9 +46,16 @@ $(document).ready(function() {
         }).done(function(xchangeData) {
             storedRateGBP = xchangeData.rates.GBP;
             populate();
+            setTimeout(
+              function() 
+              {
+                $refresh.addClass("btn-clicked");
+              }, 1000);
+            
         }).error(function(jqXHR, error){
             console.log(error);
         });
+        $lastUpdate.text(moment().format('ddd DD MMM, hh:mm'));
     }
 
     $amount.on('change, keyup', function() {
