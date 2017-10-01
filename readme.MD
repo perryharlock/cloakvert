@@ -2,8 +2,8 @@
 
 To install grunt to enable compile and watching of less files  
 `sudo npm install -g grunt-cli`  
-`npm install grunt`
-`npm install postcss-cli autoprefixer`
+`npm install grunt`  
+`npm install postcss-cli autoprefixer`  
 `npm install`
 
 To monitor files  
