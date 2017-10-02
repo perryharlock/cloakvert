@@ -48,13 +48,7 @@
                                 </span>
                             </h2>
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="input-wrapper">
-                                        <label class="upper center">Type number of cloak</label>
-                                        <input id="amount" type="number" pattern="[0-9]*" name="amount" value="600" class="amount">
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
+                                <div class="col-sm-12 col-sm-push-12 col-lg-24 col-lg-push-0">
                                     <ul class="list-unstyled clearfix center">
                                         <li>
                                             <span class="currency">£</span>
@@ -70,36 +64,51 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <div class="col-sm-12 col-sm-pull-12 col-lg-24 col-lg-pull-0">
+                                    <div class="input-wrapper">
+                                        <label class="upper center">Type number of cloak</label>
+                                        <input id="amount" type="number" pattern="[0-9]*" name="amount" value="600" class="amount">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-24 col-md-18 col-md-offset-3 col-lg-12 col-lg-offset-0">
                         <div class="rates">
                             <h2 class="title robot center hidden-xs">Rates</h2>
-                            <ul class="list-unstyled clearfix center">
-                                <li class="price-dollar">
-                                    <span class="currency">$</span>
-                                    <span id="priceDollar">--.--</span>
-                                </li>
-                                <li class="hidden-xs">
-                                    <span class="currency">฿</span>
-                                    <span id="priceBit" class="price-bit">--.--</span>
-                                </li>
-                            </ul>
-                            <ul class="list-unstyled clearfix center hidden-xs">
-                                <li>
-                                    <span id="perc1h" class="price-dollar">--.--</span>
-                                    <span class="currency">%</span>
-                                </li>
-                                <li>
-                                    <span id="perc1d" class="price-dollar">--.--</span>
-                                    <span class="currency">%</span>
-                                </li>
-                                <li>
-                                    <span id="perc7d" class="price-dollar">--.--</span>
-                                    <span class="currency">%</span>
-                                </li>
-                            </ul>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-24">
+                                    <ul class="list-unstyled clearfix center">
+                                        <li class="price-dollar">
+                                            <span class="currency">$</span>
+                                            <span id="priceDollar">--.--</span>
+                                        </li>
+                                        <li class="hidden-xs">
+                                            <span class="currency">฿</span>
+                                            <span id="priceBit" class="price-bit">--.--</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-12 col-md-24">
+                                    <ul class="row list-unstyled clearfix center hidden-xs">
+                                        <li class="col-sm-24 col-md-8">
+                                            <span class="">Hour</span>
+                                            <span id="perc1h" class="price-dollar">--.--</span>
+                                            <span class="currency">%</span>
+                                        </li>
+                                        <li class="col-sm-24 col-md-8">
+                                            <span class="">Day</span>
+                                            <span id="perc1d" class="price-dollar">--.--</span>
+                                            <span class="currency">%</span>
+                                        </li>
+                                        <li class="col-sm-24 col-md-8">
+                                            <span class="">Week</span>
+                                            <span id="perc7d" class="price-dollar">--.--</span>
+                                            <span class="currency">%</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
