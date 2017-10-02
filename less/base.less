@@ -117,6 +117,17 @@ label {
     }
 }
 
+.price-dollar {
+    position: fixed;
+    top: 150px;
+    left: 0;
+    right: 0;
+}
+
+.stake {
+    margin-top: 95px;
+}
+
 .currency {
     font-size: 18px;
     letter-spacing: 1px;
@@ -124,12 +135,18 @@ label {
     color: @color-font;
 }
 
-.rates {
+.title {
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 6px;
     margin-top: 40px;
     margin-bottom: 5px;
-    letter-spacing: 6px;
-    font-size: 20px;
-    line-height: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.rates {
+    margin-bottom: 20px;
 }
 
 .last-update {
@@ -144,5 +161,57 @@ label {
         color: @color-white;
         font-size: 16px;
         line-height: 16px;
+    }
+}
+
+.input-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    padding: 15px 0;
+}
+
+.error-container {
+    background-color: @color-negative;
+    padding: 10px;
+    color: @color-white;
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media @screen-tablet {
+    .price-dollar {
+        position: static;
+    }
+
+    .title {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .stake {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .stake, .rates {
+        background-color: @bg-color-3;
+        padding: 25px;
+    }
+
+    .input-wrapper {
+        position: static;
+        padding: 0;
+    }
+
+    .amount, label {
+        background-color: @bg-color-1;
+    }
+
+    .amount {
+        padding: 50px 0;
     }
 }

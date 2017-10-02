@@ -23,7 +23,9 @@
 </head>
 <body class="no-js">
     <header class="header center">
-        <span class="robot">CLOAK</span><span class="vert">vert</span>
+        <h1>
+            <span class="robot">CLOAK</span><span class="vert">vert</span>
+        </h1>
         <p class="last-update center">
             Updated <span id="lastUpdate" class="last-update-date">--- -- ---, --:--</span>
         </p>
@@ -33,54 +35,83 @@
     </header>
 
     <main>
-        <section class="section">
+        <section>
             <div class="container">
-                <ul class="row list-unstyled center">
-                    <li class="col-xs-24">
-                        <span class="currency">$</span>
-                        <span id="priceDollar" class="price-dollar">--.--</span>
-                        <span class="currency">per coin</span>
-                    </li>
-                    <li class="col-xs-24 hidden-xs">
-                        <span class="currency">฿</span>
-                        <span id="priceBit" class="price-bit">--.--</span>
-                        <span class="currency">per coin</span>
-                    </li>
-                </ul>
                 <div class="row">
-                    <div class="col-md-12 col-md-offset-6 center">
-                        <p class="rates robot">
-                            <span id="yourStake"></span> CLOAK
-                        </p>
+                    <div class="col-sm-24 col-md-18 col-md-offset-3 col-lg-12 col-lg-offset-0">
+                        <div class="stake">
+                            <h2 class="title robot center">
+                                <span class="hidden-xs">Your Stake</span>
+                                <span class="visible-xs">
+                                    <span id="yourStake"></span> cloak
+                                </span>
+                                </span>
+                            </h2>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="input-wrapper">
+                                        <label class="upper center">Type number of cloak</label>
+                                        <input id="amount" type="number" pattern="[0-9]*" name="amount" value="600" class="amount">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <ul class="list-unstyled clearfix center">
+                                        <li>
+                                            <span class="currency">£</span>
+                                            <span id="valuePounds">--.--</span>
+                                        </li>
+                                        <li>
+                                            <span class="currency">$</span>
+                                            <span id="valueDollar">--.--</span>
+                                        </li>
+                                        <li class="hidden-xs">
+                                            <span class="currency">฿</span>
+                                            <span id="valueBit">--.--</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-24 col-md-18 col-md-offset-3 col-lg-12 col-lg-offset-0">
+                        <div class="rates">
+                            <h2 class="title robot center hidden-xs">Rates</h2>
+                            <ul class="list-unstyled clearfix center">
+                                <li class="price-dollar">
+                                    <span class="currency">$</span>
+                                    <span id="priceDollar">--.--</span>
+                                </li>
+                                <li class="hidden-xs">
+                                    <span class="currency">฿</span>
+                                    <span id="priceBit" class="price-bit">--.--</span>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled clearfix center hidden-xs">
+                                <li>
+                                    <span id="perc1h" class="price-dollar">--.--</span>
+                                    <span class="currency">%</span>
+                                </li>
+                                <li>
+                                    <span id="perc1d" class="price-dollar">--.--</span>
+                                    <span class="currency">%</span>
+                                </li>
+                                <li>
+                                    <span id="perc7d" class="price-dollar">--.--</span>
+                                    <span class="currency">%</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <ul class="row list-unstyled center">
-                    <li class="col-xs-24">
-                        <span class="currency">£</span>
-                        <span id="valuePounds">--.--</span>
-                    </li>
-                    <li class="col-xs-24">
-                        <span class="currency">$</span>
-                        <span id="valueDollar">--.--</span>
-                    </li>
-                    <li class="col-xs-24 hidden-xs">
-                        <span class="currency">฿</span>
-                        <span id="valueBit">--.--</span>
-                    </li>
-                </ul>
             </div>
         </section>
     
-        <footer class="footer center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-md-offset-6">
-                        <label class="upper center">Type number of cloak</label>
-                        <input id="amount" type="number" pattern="[0-9]*" name="amount" value="600" class="amount">
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <div class="col-sm-16 col-sm-offset-4 col-md-12 col-md-offset-6">
+            <p id="errorContainer" class="error-container center hidden">
+                There was a problem refreshing.<br/>
+                Please try again.
+            </p>
+        </div>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" defer></script>
