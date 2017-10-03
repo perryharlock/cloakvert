@@ -36,6 +36,7 @@ $(document).ready(function() {
 
     function showError() {
         $errorContainer.removeClass('hidden');
+        $('.last-update').removeClass('hidden');
         $('.progress').addClass('hidden');
     }
 
@@ -54,11 +55,13 @@ $(document).ready(function() {
             $errorContainer.addClass('hidden');
             $refresh.addClass('btn-refresh-clicked');
             $('.progress').addClass('hidden');
+            $('.last-update').removeClass('hidden');
         }
     }
 
     function getAjax(i) {
         $('.progress').removeClass('hidden');
+        $('.last-update').addClass('hidden');
         $refresh.removeClass('btn-refresh-clicked');
         $.ajax({
             url: cloakURL,

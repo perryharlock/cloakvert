@@ -102,6 +102,7 @@ a:hover, a:active, a:focus {
 
 .vert {
     font-style: italic;
+    color: @color-primary;
 }
 
 label {
@@ -152,7 +153,7 @@ label {
 }
 
 .last-update {
-    color: fade(@color-white, 30%);
+    color: fade(@color-positive, 30%);
     font-size: 12px;
     line-height: 12px;
     letter-spacing: 2px;
@@ -164,6 +165,14 @@ label {
         font-size: 16px;
         line-height: 16px;
     }
+}
+
+.progress {
+    color: @color-primary;
+    margin: 5px 10px;
+    font-size: 16px;
+    line-height: 16px;
+    position: relative;
 }
 
 .input-wrapper {
@@ -183,13 +192,6 @@ label {
     line-height: 20px;
     position: relative;
     border-radius: 2px;
-}
-
-.progress {
-    color: @color-primary;
-    padding: 10px 0;
-    font-size: 16px;
-    line-height: 16px;
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -232,8 +234,17 @@ label {
         bottom: -30px;
     }
 
+    .last-update, .progress {
+        position: absolute;
+        bottom: -60px;
+        left: 50%;
+    }
+
     .last-update {
-        position: relative;
-        top: 85px;
+        margin-left: -105px;
+    }
+
+    .progress {
+        margin-left: -45px;
     }
 }

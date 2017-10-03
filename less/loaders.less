@@ -27,24 +27,37 @@
 }
 
 .ball-scale {
-    position: relative;
-    top: -30px;
-    margin: 0 auto;
-    width: 40px;
-    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -13px 0 0 -13px;
+    width: 24px;
+    height: 24px;
 
     &:after {
         content: "";
         display: block;
         background-color: #fff;
-        width: 15px;
-        height: 15px;
         border-radius: 100%;
         margin: 2px;
         animation-fill-mode: both;
         display: inline-block;
-        height: 40px;
-        width: 40px;
+        height: 24px;
+        width: 24px;
         animation: ball-scale 1s 0s ease-in-out infinite;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media @screen-tablet {
+    .ball-scale {
+        width: 40px;
+        height: 40px;
+        margin: -22px 0 0 -22px;
+
+        &:after {
+            height: 40px;
+            width: 40px;
+        }
     }
 }
