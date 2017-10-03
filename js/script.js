@@ -30,6 +30,15 @@ $(document).ready(function() {
     $body.removeClass('no-js');
 
     // Functions
+    function upOrDown (movement, item) {
+        if (movement > 0) {
+            item.parent().addClass('list-perc-movement-up');
+        }
+        else if (movement < 0) {
+            item.parent().addClass('list-perc-movement-down');
+        }
+    }
+
     function hideError() {
         $errorContainer.addClass('hidden');
     }
@@ -49,6 +58,9 @@ $(document).ready(function() {
             $perc1h.text(parseFloat(storedperc1h).toFixed(2));
             $perc1d.text(parseFloat(storedperc1d).toFixed(2));
             $perc7d.text(parseFloat(storedperc7d).toFixed(2));
+            upOrDown(storedperc1h, $perc1h);
+            upOrDown(storedperc1d, $perc1d);
+            upOrDown(storedperc7d, $perc7d);
             $priceBit.text(storedPriceBTC);
             $valuePounds.text(parseFloat(storedRateGBP * $valueDollar.text()).toFixed(0));
             $yourStake.text($amount.val());

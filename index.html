@@ -41,7 +41,7 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-24 col-md-18 col-md-offset-3 col-lg-12 col-lg-offset-0">
+                    <div class="col-sm-22 col-sm-offset-1 col-md-18 col-md-offset-3 col-lg-12 col-lg-offset-0">
                         <div class="stake">
                             <h2 class="title robot center">
                                 <span class="hidden-xs">Your Stake</span>
@@ -52,7 +52,7 @@
                             </h2>
                             <div class="row">
                                 <div class="col-sm-12 col-sm-push-12 col-lg-24 col-lg-push-0">
-                                    <ul class="list-unstyled clearfix center">
+                                    <ul class="list-unstyled list-money clearfix center">
                                         <li>
                                             <span class="currency">£</span>
                                             <span id="valuePounds">--.--</span>
@@ -67,21 +67,21 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-sm-12 col-sm-pull-12 col-lg-24 col-lg-pull-0">
+                                <div class="col-sm-12 col-sm-pull-12 col-lg-18 col-lg-offset-3 col-lg-pull-0">
                                     <div class="input-wrapper">
-                                        <label class="upper center">Type number of cloak</label>
-                                        <input id="amount" type="number" pattern="[0-9]*" name="amount" value="600" class="amount">
+                                        <label for="amount" class="upper center">Type number of cloak</label>
+                                        <input id="amount" name="amount" type="number" pattern="[0-9]*" name="amount" value="600" class="amount">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-24 col-md-18 col-md-offset-3 col-lg-12 col-lg-offset-0">
+                    <div class="col-sm-22 col-sm-offset-1 col-md-18 col-md-offset-3 col-lg-12 col-lg-offset-0">
                         <div class="rates">
-                            <h2 class="title robot center">Rate<span class="hidden-xs">s</span></h2>
+                            <h2 class="title robot center"><span class="hidden-xs">Current</span> Rate<span class="hidden-xs">s</span></h2>
                             <div class="row">
-                                <div class="col-sm-12 col-md-24">
-                                    <ul class="list-unstyled clearfix center">
+                                <div class="col-sm-12 col-lg-24">
+                                    <ul class="list-unstyled list-money clearfix center">
                                         <li class="price-dollar">
                                             <span class="currency">$</span>
                                             <span id="priceDollar">--.--</span>
@@ -92,22 +92,28 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-sm-12 col-md-24">
-                                    <ul class="row list-unstyled clearfix center hidden-xs">
-                                        <li class="col-sm-24 col-md-8">
-                                            <span class="">Hour</span>
-                                            <span id="perc1h" class="price-dollar">--.--</span>
-                                            <span class="currency">%</span>
+                                <div class="col-sm-12 col-lg-18 col-lg-offset-3">
+                                    <ul class="row list-unstyled list-perc clearfix center hidden-xs">
+                                        <li class="col-sm-24 col-lg-8">
+                                            <span class="list-perc-period upper">Hour</span>
+                                            <span class="list-perc-movement">
+                                                <span id="perc1h" class="list-perc-amount">--.--</span>
+                                                <span class="list-perc-suffix">%</span>
+                                            </span>
                                         </li>
-                                        <li class="col-sm-24 col-md-8">
-                                            <span class="">Day</span>
-                                            <span id="perc1d" class="price-dollar">--.--</span>
-                                            <span class="currency">%</span>
+                                        <li class="col-sm-24 col-lg-8">
+                                            <span class="list-perc-period upper">Day</span>
+                                            <span class="list-perc-movement">
+                                                <span id="perc1d" class="list-perc-amount">--.--</span>
+                                                <span class="list-perc-suffix">%</span>
+                                            </span>
                                         </li>
-                                        <li class="col-sm-24 col-md-8">
-                                            <span class="">Week</span>
-                                            <span id="perc7d" class="price-dollar">--.--</span>
-                                            <span class="currency">%</span>
+                                        <li class="col-sm-24 col-lg-8">
+                                            <span class="list-perc-period upper">Week</span>
+                                            <span class="list-perc-movement">
+                                                <span id="perc7d" class="list-perc-amount">--.--</span>
+                                                <span class="list-perc-suffix">%</span>
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -144,7 +150,7 @@
     </main>
 
     <footer class="footer center hidden-xs">
-        <a href="http://www.perryharlock.co.uk">Design and build</a>
+        <a href="http://www.perryharlock.co.uk" target="_blank">Crayons by Perry Harlock</a>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" defer></script>
