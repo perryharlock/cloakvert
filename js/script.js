@@ -25,6 +25,8 @@ $(document).ready(function() {
         $yourStake      = $('#yourStake'),
         $errorContainer = $('#errorContainer'),
         $hideError      = $('#hideError'),
+        $progress       = $('[data-role="progress"]'),
+        $lastUpdateWrap = $('[data-role="lastUpdateWrap"]'),
         $lastUpdate     = $('[data-role="lastUpdate"]');
 
     $body.removeClass('no-js');
@@ -45,8 +47,8 @@ $(document).ready(function() {
 
     function showError() {
         $errorContainer.removeClass('hidden');
-        $('.last-update').removeClass('hidden');
-        $('.progress').addClass('hidden');
+        $lastUpdateWrap.removeClass('hidden');
+        $progress.addClass('hidden');
     }
 
     function populate(i) {
@@ -66,14 +68,14 @@ $(document).ready(function() {
             $yourStake.text($amount.val());
             $errorContainer.addClass('hidden');
             $refresh.addClass('btn-refresh-clicked');
-            $('.progress').addClass('hidden');
-            $('.last-update').removeClass('hidden');
+            $progress.addClass('hidden');
+            $lastUpdateWrap.removeClass('hidden');
         }
     }
 
     function getAjax(i) {
-        $('.progress').removeClass('hidden');
-        $('.last-update').addClass('hidden');
+        $progress.removeClass('hidden');
+        $lastUpdateWrap.addClass('hidden');
         $refresh.removeClass('btn-refresh-clicked');
         $.ajax({
             url: cloakURL,
