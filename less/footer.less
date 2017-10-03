@@ -1,2 +1,22 @@
 .footer {
+    background-color: @bg-color-2;
+    padding: 15px 0;
+    margin-top: 40px;
+
+    a {
+        color: @color-font;
+        font-size: 12px;
+        transition: all 0.4s linear;
+
+        &:hover, &:focus, &:active {
+            color: @color-white;
+        }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media @screen-tablet {
+    .footer {
+        margin-top: 80px;
+    }
 }

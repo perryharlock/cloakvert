@@ -64,23 +64,35 @@ a:hover, a:active, a:focus {
 }
 
 .btn {
-    background: @bg-color-2 url(@refresh) no-repeat center center;
-    background-size: 40px 40px;
-    width: 60px;
-    height: 60px;
-    padding: 15px;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    bottom: -30px;
-    margin-left: -30px;
     border: none;
     outline: none;
-    transition: all 1s ease;
 
-    &-clicked {
-        transform: rotate(-360deg);
-        transition: none;
+    &-refresh {
+        background: @bg-color-2 url(@refresh) no-repeat center center;
+        background-size: 40px 40px;
+        width: 60px;
+        height: 60px;
+        padding: 15px;
+        border-radius: 50%;
+        position: fixed;
+        left: 50%;
+        top: 70px;
+        margin-left: -30px;
+        transition: all 1s ease;
+
+        &-clicked {
+            transform: rotate(-360deg);
+            transition: none;
+        }
+    }
+
+    &-hide {
+        background: transparent url(@hide) no-repeat center center;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
     }
 }
 
@@ -117,17 +129,6 @@ label {
     }
 }
 
-.price-dollar {
-    position: fixed;
-    top: 150px;
-    left: 0;
-    right: 0;
-}
-
-.stake {
-    margin-top: 95px;
-}
-
 .currency {
     font-size: 18px;
     letter-spacing: 1px;
@@ -135,18 +136,19 @@ label {
     color: @color-font;
 }
 
+.stake {
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
 .title {
     font-size: 20px;
     line-height: 20px;
     letter-spacing: 6px;
-    margin-top: 40px;
+    margin-top: 0;
     margin-bottom: 5px;
     font-weight: normal;
     text-transform: uppercase;
-}
-
-.rates {
-    margin-bottom: 20px;
 }
 
 .last-update {
@@ -174,27 +176,29 @@ label {
 
 .error-container {
     background-color: @color-negative;
-    padding: 10px;
+    padding: 15px;
     color: @color-white;
     margin: 0;
     font-size: 14px;
     line-height: 20px;
+    position: relative;
+    border-radius: 2px;
 }
 
 /* Small devices (tablets, 768px and up) */
 @media @screen-tablet {
-    .price-dollar {
-        position: static;
-    }
-
     .title {
-        margin-top: 0;
         margin-bottom: 20px;
     }
 
     .stake {
         margin-top: 0;
         margin-bottom: 30px;
+    }
+
+    .rates {
+        position: relative;
+        margin-bottom: 60px;
     }
 
     .stake, .rates {
@@ -213,5 +217,16 @@ label {
 
     .amount {
         padding: 50px 0;
+    }
+
+    .btn-refresh {
+        position: absolute;
+        top: auto;
+        bottom: -30px;
+    }
+
+    .last-update {
+        position: relative;
+        top: 85px;
     }
 }

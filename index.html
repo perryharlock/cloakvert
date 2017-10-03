@@ -26,12 +26,9 @@
         <h1>
             <span class="robot">CLOAK</span><span class="vert">vert</span>
         </h1>
-        <p class="last-update center">
-            Updated <span id="lastUpdate" class="last-update-date">--- -- ---, --:--</span>
+        <p class="last-update center visible-xs">
+            Updated <span data-role="lastUpdate" class="last-update-date">--- -- ---, --:--</span>
         </p>
-        <button id="refresh" type="button" class="btn btn-clicked">
-            <span class="sr-only">REFRESH</span>
-        </button>
     </header>
 
     <main>
@@ -75,7 +72,7 @@
                     </div>
                     <div class="col-sm-24 col-md-18 col-md-offset-3 col-lg-12 col-lg-offset-0">
                         <div class="rates">
-                            <h2 class="title robot center hidden-xs">Rates</h2>
+                            <h2 class="title robot center">Rate<span class="hidden-xs">s</span></h2>
                             <div class="row">
                                 <div class="col-sm-12 col-md-24">
                                     <ul class="list-unstyled clearfix center">
@@ -109,19 +106,37 @@
                                     </ul>
                                 </div>
                             </div>
+                            <button id="refresh" type="button" class="btn btn-refresh btn-clicked">
+                                <span class="sr-only">REFRESH</span>
+                            </button>
+                            <p class="last-update center hidden-xs">
+                                Updated <span data-role="lastUpdate" class="last-update-date">--- -- ---, --:--</span>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    
-        <div class="col-sm-16 col-sm-offset-4 col-md-12 col-md-offset-6">
-            <p id="errorContainer" class="error-container center hidden">
-                There was a problem refreshing.<br/>
-                Please try again.
-            </p>
-        </div>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-16 col-sm-offset-4 col-md-12 col-md-offset-6">
+                        <p id="errorContainer" class="error-container center hidden">
+                            <button id="hideError" class="btn btn-hide">
+                                <span class="sr-only">Hide error message</span>
+                            </button>
+                            There was a problem refreshing.<br/>
+                            Please try again.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer center hidden-xs">
+        <a href="http://www.perryharlock.co.uk">Design and build</a>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" defer></script>
     <script src="js-min/script.js" defer></script>

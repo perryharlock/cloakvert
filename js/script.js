@@ -23,11 +23,15 @@ $(document).ready(function() {
         $amount         = $('#amount'),
         $refresh        = $('#refresh'),
         $yourStake      = $('#yourStake'),
-        $errorText      = $('#errorText'),
         $errorContainer = $('#errorContainer'),
-        $lastUpdate     = $('#lastUpdate');
+        $hideError      = $('#hideError'),
+        $lastUpdate     = $('[data-role="lastUpdate"]');
 
     $body.removeClass('no-js');
+
+    function hideError () {
+        $errorContainer.addClass('hidden');
+    }
 
     function populate() {
         $valueDollar.text(parseFloat(storedPriceUSD * $amount.val()).toFixed(0));
@@ -43,7 +47,7 @@ $(document).ready(function() {
     }
 
     function getAjax() {
-        $refresh.removeClass('btn-clicked');
+        $refresh.removeClass('btn-refresh-clicked');
         $.ajax({
             url: cloakURL,
         }).done(function(data) {
@@ -66,7 +70,7 @@ $(document).ready(function() {
             setTimeout(
               function() 
               {
-                $refresh.addClass('btn-clicked');
+                $refresh.addClass('btn-refresh-clicked');
               }, 1000);
             
         }).error(function(jqXHR, error){
@@ -85,6 +89,10 @@ $(document).ready(function() {
 
     $refresh.on('click', function() {
         getAjax();
+    });
+
+    $hideError.on('click', function() {
+        hideError();
     });
 
     getAjax();
