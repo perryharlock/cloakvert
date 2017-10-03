@@ -29,24 +29,36 @@ $(document).ready(function() {
 
     $body.removeClass('no-js');
 
-    function hideError () {
+    // Functions
+    function hideError() {
         $errorContainer.addClass('hidden');
     }
 
-    function populate() {
-        $valueDollar.text(parseFloat(storedPriceUSD * $amount.val()).toFixed(0));
-        $valueBit.text(parseFloat(storedPriceBTC * $amount.val()).toFixed(8));
-        $priceDollar.text(parseFloat(storedPriceUSD).toFixed(2));
-        $perc1h.text(parseFloat(storedperc1h).toFixed(2));
-        $perc1d.text(parseFloat(storedperc1d).toFixed(2));
-        $perc7d.text(parseFloat(storedperc7d).toFixed(2));
-        $priceBit.text(storedPriceBTC);
-        $valuePounds.text(parseFloat(storedRateGBP * $valueDollar.text()).toFixed(0));
-        $yourStake.text($amount.val());
-        $errorContainer.addClass('hidden');
+    function showError() {
+        $errorContainer.removeClass('hidden');
+        $('.progress').addClass('hidden');
     }
 
-    function getAjax() {
+    function populate(i) {
+        if(i == 2){
+            $lastUpdate.text(moment().format('ddd DD MMM, HH:mm'));
+            $valueDollar.text(parseFloat(storedPriceUSD * $amount.val()).toFixed(0));
+            $valueBit.text(parseFloat(storedPriceBTC * $amount.val()).toFixed(8));
+            $priceDollar.text(parseFloat(storedPriceUSD).toFixed(2));
+            $perc1h.text(parseFloat(storedperc1h).toFixed(2));
+            $perc1d.text(parseFloat(storedperc1d).toFixed(2));
+            $perc7d.text(parseFloat(storedperc7d).toFixed(2));
+            $priceBit.text(storedPriceBTC);
+            $valuePounds.text(parseFloat(storedRateGBP * $valueDollar.text()).toFixed(0));
+            $yourStake.text($amount.val());
+            $errorContainer.addClass('hidden');
+            $refresh.addClass('btn-refresh-clicked');
+            $('.progress').addClass('hidden');
+        }
+    }
+
+    function getAjax(i) {
+        $('.progress').removeClass('hidden');
         $refresh.removeClass('btn-refresh-clicked');
         $.ajax({
             url: cloakURL,
@@ -57,43 +69,40 @@ $(document).ready(function() {
             storedperc1h = marketData.percent_change_1h;
             storedperc1d = marketData.percent_change_24h;
             storedperc7d = marketData.percent_change_7d;
-            populate();
+            i = i + 1;
+            populate(i);
         }).error(function(jqXHR, error){
-            $errorContainer.removeClass('hidden');
+            showError();
         });
 
         $.ajax({
             url: xchangeURL,
         }).done(function(xchangeData) {
             storedRateGBP = xchangeData.rates.GBP;
-            populate();
-            setTimeout(
-              function() 
-              {
-                $refresh.addClass('btn-refresh-clicked');
-              }, 1000);
-            
+            i = i + 1;
+            populate(i);            
         }).error(function(jqXHR, error){
-            $errorContainer.removeClass('hidden');
+            showError();
         });
-        $lastUpdate.text(moment().format('ddd DD MMM, HH:mm'));
     }
 
+    // Click handlers
     $amount.on('change, keyup', function() {
-        populate();
+        populate(2);
     });
 
     $body.on('touchmove', function() {
-        getAjax();
+        getAjax(0);
     });
 
     $refresh.on('click', function() {
-        getAjax();
+        getAjax(0);
     });
 
     $hideError.on('click', function() {
         hideError();
     });
 
-    getAjax();
+    // Lets get this party started
+    getAjax(0);
 });
