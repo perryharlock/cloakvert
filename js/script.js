@@ -21,7 +21,7 @@ $(document).ready(function() {
         $valueBit       = $('#valueBit'),
         $valuePounds    = $('#valuePounds'),
         $amount         = $('#amount'),
-        $refresh        = $('#refresh'),
+        $refresh        = $('[data-role="refresh"]'),
         $yourStake      = $('#yourStake'),
         $errorContainer = $('#errorContainer'),
         $hideError      = $('#hideError'),
