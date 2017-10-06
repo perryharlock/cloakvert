@@ -32,6 +32,14 @@ $(document).ready(function() {
     $body.removeClass('no-js');
 
     // Functions
+    function setCookie (){
+        Cookies.set("cloak-amount", $amount.val());
+    }
+
+    function getCookie (){
+        $amount.val(Cookies.get("cloak-amount"));
+    }
+
     function upOrDown (movement, item) {
         if (movement > 0) {
             item.parent().addClass('list-perc-movement-up');
@@ -108,6 +116,10 @@ $(document).ready(function() {
         populate(2);
     });
 
+    $amount.on('change', function() {
+        setCookie();
+    });
+
     $body.on('touchmove', function() {
         getAjax(0);
     });
@@ -122,4 +134,7 @@ $(document).ready(function() {
 
     // Lets get this party started
     getAjax(0);
+    getCookie(function() {
+        setCookie();
+    });
 });
