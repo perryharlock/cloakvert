@@ -114,9 +114,6 @@ $(document).ready(function() {
     // Click handlers
     $amount.on('change, keyup', function() {
         populate(2);
-    });
-
-    $amount.on('change', function() {
         setCookie();
     });
 
@@ -134,7 +131,10 @@ $(document).ready(function() {
 
     // Lets get this party started
     getAjax(0);
-    getCookie(function() {
+    if (Cookies.get("cloak-amount")) {
+        getCookie();
+    }
+    else {
         setCookie();
-    });
+    }
 });
