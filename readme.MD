@@ -1,21 +1,28 @@
-# cloakvert
+# cloakvert  
 
-To install grunt to enable compile and watching of less files  
-`sudo npm install -g grunt-cli`  
-`npm install grunt`  
-`npm install postcss-cli autoprefixer`  
+The npm install will install grunt, autoprefixer, uglify, http-server..and much much more!  
+
+Grunt will monitor less and js files and compile and minify them when they change as well as on initial run.
+
+1 Install:  
 `npm install`
 
-To monitor files  
+2 Monitor files  
 `grunt`  
 
-To install a simple HTTP server  
-`npm install http-server -g`  
-
-To run the server  
+3 Run the server  
 `http-server`  
 
 Go to http://localhost:8080/
 
-When changes are pushed to master they will appear on
+
+NOTE
+====
+
+- Minimal version bootstrap with grid, utilities, responsive utilities and scaffolding
+- Using 24 column bootstrap grid
+- Larger screen breakpoint added to bootstrap grid at 1310px
+- All Less/CSS is automatically prefixed on compilation  
+
+When changes are pushed to master they will appear on  
 https://perryharlock.github.io/cloakvert/
