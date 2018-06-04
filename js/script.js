@@ -1,8 +1,10 @@
 $(document).ready(function() {
 
     // Variables and Cached Selectors
-    var cloakURL        = 'https://api.coinmarketcap.com/v1/ticker/cloakcoin/',
-        xchangeURL      = 'https://api.fixer.io/latest?base=USD',
+    var coinmarketcapURL= 'https://api.coinmarketcap.com/v1/ticker/cloakcoin/',
+        xchangeURL      = 'http://www.apilayer.net/api/live',
+        xchangeCurrency = '&currencies=GBP'
+        xchangeKey      = 'e19629989a2236252a2334ddbd131ba3',
         $body           = $('body'),
         storedPriceUSD  = 0;
         storedPriceBTC  = 0;
@@ -86,7 +88,7 @@ $(document).ready(function() {
         $lastUpdateWrap.addClass('hidden');
         $refresh.removeClass('btn-refresh-clicked');
         $.ajax({
-            url: cloakURL,
+            url: coinmarketcapURL,
         }).done(function(data) {
             var marketData = data[0];
             storedPriceUSD = marketData.price_usd;
@@ -101,9 +103,9 @@ $(document).ready(function() {
         });
 
         $.ajax({
-            url: xchangeURL,
+            url: xchangeURL +'?access_key=' + xchangeKey + xchangeCurrency,
         }).done(function(xchangeData) {
-            storedRateGBP = xchangeData.rates.GBP;
+            storedRateGBP = xchangeData.quotes.USDGBP;
             i = i + 1;
             populate(i);            
         }).error(function(jqXHR, error){
