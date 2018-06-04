@@ -2,9 +2,7 @@ $(document).ready(function() {
 
     // Variables and Cached Selectors
     var coinmarketcapURL= 'https://api.coinmarketcap.com/v1/ticker/cloakcoin/',
-        xchangeURL      = 'http://www.apilayer.net/api/live',
-        xchangeCurrency = '&currencies=GBP'
-        xchangeKey      = 'e19629989a2236252a2334ddbd131ba3',
+        xchangeURL      = 'https://free.currencyconverterapi.com/api/v5/convert?q=USD_GBP&compact=ultra',
         $body           = $('body'),
         storedPriceUSD  = 0;
         storedPriceBTC  = 0;
@@ -103,9 +101,9 @@ $(document).ready(function() {
         });
 
         $.ajax({
-            url: xchangeURL +'?access_key=' + xchangeKey + xchangeCurrency,
+            url: xchangeURL,
         }).done(function(xchangeData) {
-            storedRateGBP = xchangeData.quotes.USDGBP;
+            storedRateGBP = xchangeData.USD_GBP;
             i = i + 1;
             populate(i);            
         }).error(function(jqXHR, error){
