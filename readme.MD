@@ -7,11 +7,8 @@ Grunt will monitor less and js files and compile and minify them when they chang
 1 Install:  
 `npm install`
 
-2 Monitor files  
-`grunt`  
-
-3 Run the server  
-`http-server`  
+2 Monitor files and start http-server  
+`npm start`  
 
 Go to http://localhost:8080/
 
