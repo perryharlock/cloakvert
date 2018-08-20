@@ -32,12 +32,12 @@ $(document).ready(function() {
     $body.removeClass('no-js');
 
     // Functions
-    function setCookie (){
-        Cookies.set("cloak-amount", $amount.val());
+    function setStorage (){
+        localStorage.setItem('cloak-amount', $amount.val());
     }
 
-    function getCookie (){
-        $amount.val(Cookies.get("cloak-amount"));
+    function getStorage (){
+        $amount.val(localStorage.getItem('cloak-amount'));
     }
 
     function upOrDown (movement, item) {
@@ -94,7 +94,7 @@ $(document).ready(function() {
             storedperc1h = marketData.percent_change_1h;
             storedperc1d = marketData.percent_change_24h;
             storedperc7d = marketData.percent_change_7d;
-            i = i + 1;
+            i++;
             populate(i);
         }).error(function(jqXHR, error){
             showError();
@@ -104,7 +104,7 @@ $(document).ready(function() {
             url: xchangeURL,
         }).done(function(xchangeData) {
             storedRateGBP = xchangeData.USD_GBP;
-            i = i + 1;
+            i++;
             populate(i);            
         }).error(function(jqXHR, error){
             showError();
@@ -114,7 +114,7 @@ $(document).ready(function() {
     // Click handlers
     $amount.on('change, keyup', function() {
         populate(2);
-        setCookie();
+        setStorage();
     });
 
     $body.on('touchmove', function() {
@@ -131,10 +131,10 @@ $(document).ready(function() {
 
     // Lets get this party started
     getAjax(0);
-    if (Cookies.get("cloak-amount")) {
-        getCookie();
+    if (localStorage.getItem('cloak-amount')) {
+        getStorage();
     }
     else {
-        setCookie();
+        setStorage();
     }
 });
