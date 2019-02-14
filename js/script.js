@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // Variables and Cached Selectors
     var coinmarketcapURL= 'https://api.coinmarketcap.com/v1/ticker/cloakcoin/',
-        xchangeURL      = 'https://free.currencyconverterapi.com/api/v5/convert?q=USD_GBP&compact=ultra',
+        xchangeURL      = 'https://free.currencyconverterapi.com/api/v5/convert?q=USD_GBP&compact=ultra&apiKey=bab8cdb62bf49ac2b3d0',
         $body           = $('body'),
         storedPriceUSD  = 0;
         storedPriceBTC  = 0;
