@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // Variables and Cached Selectors
     var coingeckoURL    = 'https://api.coingecko.com/api/v3/coins/cloakcoin?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false',
-        xchangeURL      = 'https://free.currencyconverterapi.com/api/v5/convert?q=USD_GBP&compact=ultra&apiKey=70e528f3d42344c896cf',
+        xchangeURL      = 'https://free.currencyconverterapi.com/api/v5/convert?q=USD_GBP&compact=ultra&apiKey=8fb30e7dac56e80b91ea',
         $body           = $('body'),
         storedPriceUSD  = 0;
         storedPriceBTC  = 0;
